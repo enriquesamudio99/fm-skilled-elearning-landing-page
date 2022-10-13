@@ -1,0 +1,520 @@
+:root {
+    /** Font Families **/
+    --ff-plus-jakarta: 'Plus Jakarta Sans', sans-serif;
+
+    /** Colors **/
+    --clr-primary-900: hsl(234, 25%, 52%);
+    --clr-secondary-900: hsl(341, 92%, 62%);
+    --clr-secondary-700: hsl(341, 100%, 83%);
+    --clr-neutral-900: hsl(232, 10%, 56%);
+    --clr-dark: hsl(233, 54%, 16%);
+    --clr-light: hsl(0, 0%, 100%);
+
+    /** Gradients **/
+    --gradient-one: linear-gradient(180deg, #FF6F48 0%, #F02AA6 100%);
+    --gradient-one-hover: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #FF6F48 0%, #F02AA6 100%);
+    --gradient-two: linear-gradient(180deg, #4851FF -54.32%, #F02AA6 100%);
+    --gradient-two-hover: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(180deg, #4851FF -54.32%, #F02AA6 100%);
+    --gradient-three: linear-gradient(180deg, #FFFFFF 0%, #F0F1FF 100%);
+
+    /** Font Sizes **/
+    --fs-heading-xl: 3.5rem;
+    --fs-heading-lg: 2.5rem;
+    --fs-heading-md: 2rem;
+    --fs-heading-sm: 1.5rem;
+    --fs-heading-xs: 1.25rem;
+    --fs-body-md: 1.125rem;
+    --fs-body-sm: 1rem;
+
+    /** Line Heights **/
+    --lh-heading-xl: 4.413rem;
+    --lh-heading-lg: 3.15rem;
+    --lh-heading-md: 2.5rem;
+    --lh-heading-sm: 1.888rem;
+    --lh-heading-xs: 1.563rem;
+    --lh-body-md: 1.75rem;
+    --lh-body-sm: 1.625rem;
+
+    /** Font Weights **/
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-extra-bold: 800;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    text-rendering: optimizeSpeed;
+    line-height: 1.6;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--clr-light);
+    color: var(--clr-neutral-900);
+    font-family: var(--ff-plus-jakarta);
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
+    font-weight: var(--fw-medium);
+}
+
+@media (min-width: 75rem) {
+    body {
+        font-size: var(--fs-body-md);
+        line-height: var(--lh-body-md);
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2, h3 {
+    color: var(--clr-dark);
+    font-weight: var(--fw-extra-bold);
+    font-size: var(--fs-heading-xs);
+    line-height: var(--lh-heading-xs);
+}
+
+@media (min-width: 75rem) {
+    h1, h2, h3 {
+        font-size: var(--fs-heading-sm);
+        line-height: var(--lh-heading-sm);
+    }
+}
+
+/* Reusables */
+.container {
+    width: calc(100% - 2rem);
+    margin: 0 auto;
+}
+
+@media (min-width: 48rem) {
+    .container {
+        width: 689px;
+    }
+}
+
+@media (min-width: 75rem) {
+    .container {
+        width: 1110px;
+    }
+}
+
+.d-grid {
+    display: grid;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.btn {
+    display: inline-block;
+    border: 0;
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    font-weight: var(--fw-bold);
+    border-radius: 28px;
+    padding: 0.563rem 1.5rem 0.688rem;
+}
+
+@media (hover: hover) {
+    .btn--primary:hover {
+        background: var(--clr-primary-900);
+    }
+}
+
+.btn--gradient-one {
+    background: var(--gradient-one);
+    font-size: 1.125rem;
+    padding: 0.875rem 2rem 0.875rem 2rem;
+}
+
+@media (hover: hover) {
+    .btn--gradient-one:hover {
+        background: var(--gradient-one-hover);
+    }
+}
+
+.btn--gradient-two {
+    background: var(--gradient-two);
+}
+
+@media (hover: hover) {
+    .btn--gradient-two:hover {
+        background: var(--gradient-two-hover);
+    }
+}
+
+@media (min-width: 75rem) {
+    .btn--gradient-one {
+        padding: 1.188rem 1.938rem 1rem 2rem;
+        border-radius: 31.5px;
+    }
+
+    .btn--primary,
+    .btn--gradient-two {
+        font-size: 1.125rem;
+        padding: 0.875rem 2rem 0.875rem 2rem;
+    }
+}
+
+/* HEADER */
+@media (min-width: 48rem) {
+    .header {
+        position: relative;
+    }
+}
+
+.nav {
+    padding-top: 1rem;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (min-width: 48rem) {
+    .nav {
+        padding-top: 1.5rem;
+    }
+}
+
+.nav__brand {
+    width: 89px;
+}
+
+.hero {
+    margin-top: 2.375rem;
+}
+
+@media (min-width: 48rem) {
+    .hero {
+        margin-top: 6.188rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .hero {
+        margin-top: 10.75rem;
+    }
+}
+
+@media (min-width: 48rem) {
+    .hero__content {
+        width: 398px;
+    }
+}
+
+@media (min-width: 75rem) {
+    .hero__content {
+        width: 457px;
+    }
+}
+
+.hero__title {
+    font-size: var(--fs-heading-lg);
+    line-height: var(--lh-heading-lg);
+}
+
+@media (min-width: 75rem) {
+    .hero__title {
+        font-size: var(--fs-heading-xl);
+        line-height: var(--lh-heading-xl);
+        height: 143px;
+    }
+}
+
+.hero__text {
+    margin-top: 1.625rem;
+}
+
+@media (min-width: 48rem) {
+    .hero__text {
+        margin-top: 1.563rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .hero__text {
+        margin-top: 1.813rem;
+    }
+}
+
+.hero__btn {
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 75rem) {
+    .hero__btn {
+        margin-top: 2.5rem;
+    }
+}
+
+.hero__img {
+    margin: 2.875rem auto 0;
+    width: 327px;
+    height: 301px;
+    background-image: url(../assets/images/image-hero-mobile@2x.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    z-index: 1;
+}
+
+@media (min-width: 48rem) {
+    .hero__img {
+        z-index: -1;
+        position: absolute;
+        top: -133px;
+        right: -300px;
+        background-image: url(../assets/images/image-hero-tablet@2x.png);
+        width: 700px;
+        height: 700px;
+    }
+}
+
+@media (min-width: 75rem) {
+    .hero__img {
+        top: -271px;
+        right: -359px;
+        background-image: url(../assets/images/image-hero-desktop@2x.png);
+        width: 1100px;
+        height: 1100px;
+    }
+}
+
+@media (min-width: 112.5rem) {
+    .hero__img {
+        right: -180px;
+    }
+}
+
+.main {
+    margin-top: 4.125rem;
+    background: var(--gradient-three);
+}
+
+@media (min-width: 48rem) {
+    .main {
+        margin-top: 13.125rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .main {
+        margin-top: 15.625rem;
+    }
+}
+
+.courses {
+    padding-bottom: 5rem;
+}
+
+@media (min-width: 48rem) {
+    .courses {
+        padding-bottom: 5.375rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .courses {
+        padding-bottom: 8.75rem;
+    }
+}
+
+.courses__grid {
+    row-gap: 2.5rem;
+}
+
+@media (min-width: 48rem) {
+    .courses__grid {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3, auto);
+        column-gap: 0.625rem;
+        row-gap: 3.5rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .courses__grid {
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat(2, auto);
+        column-gap: 1.875rem;
+        row-gap: 5rem;
+    }
+}
+
+.check-out {
+    background: var(--gradient-one);
+    padding: 1.5rem 1.813rem 2rem 1.75rem;
+    border-radius: 10px;
+}
+
+@media (min-width: 48rem) {
+    .check-out {
+        padding: 3.5rem 1.313rem 3.5rem 2rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .check-out {
+        padding: 4rem 2rem;
+    }
+}
+
+.check-out__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--clr-light);
+}
+
+@media (min-width: 75rem) {
+    .check-out__title {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+}
+
+.course {
+    position: relative;
+    background: var(--clr-light);
+    box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.0442381);
+    border-radius: 10px;
+    padding: 3.5rem 1.813rem 2rem 1.75rem;
+}
+
+@media (min-width: 48rem) {
+    .course {
+        padding: 3.5rem 1.375rem 2rem 2rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .course {
+        padding: 4rem 2rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.course__icon {
+    position: absolute;
+    top: -24px;
+    left: 28px;
+}
+
+.course__text {
+    margin-top: 1rem;
+}
+
+@media (min-width: 75rem) {
+    .course__text {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.course__btn {
+    margin-top: 1.5rem;
+    background: none;
+    color: var(--clr-secondary-900);
+    padding: 0;
+    font-size: 1.125rem;
+    transition: color .4s ease;
+}
+
+@media (hover: hover) {
+    .course__btn:hover {
+        color: var(--clr-secondary-700);
+    }
+}
+
+@media (min-width: 75rem) {
+    .course__btn {
+        margin-top: auto;
+    }
+}
+
+.footer {
+    background-color: var(--clr-dark);
+    padding: 2.25rem 0;
+}
+
+@media (min-width: 75rem) {
+    .footer {
+        padding: 2rem 0;
+    }
+}
+
+.footer__container {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer__brand {
+    width: 89px;
+}
