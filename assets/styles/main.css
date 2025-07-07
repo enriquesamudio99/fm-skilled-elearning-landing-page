@@ -35,6 +35,7 @@ html,
 body {
   position: relative;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body,
@@ -216,6 +217,13 @@ a {
   height: 1.25rem;
 }
 
+@media (min-width: 48rem) {
+  .navbar__logo {
+    width: 6.9375rem;
+    height: 1.75rem;
+  }
+}
+
 .navbar__logo-img {
   width: 100%;
   height: 100%;
@@ -234,9 +242,16 @@ a {
   }
 }
 
+@media (min-width: 80rem) {
+  .hero__container {
+    grid-template-columns: 28.5625rem 1fr;
+  }
+}
+
 .hero__img-container {
   width: 20.9375rem;
   height: 20rem;
+  margin: 0 auto;
 }
 
 @media (min-width: 48rem) {
@@ -247,6 +262,15 @@ a {
     z-index: -1;
     top: -68px;
     left: 322px;
+  }
+}
+
+@media (min-width: 80rem) {
+  .hero__img-container {
+    width: 58.5rem;
+    height: 58.5rem;
+    top: -142px;
+    left: 622px;
   }
 }
 
@@ -275,9 +299,34 @@ a {
   }
 }
 
+@media (min-width: 80rem) {
+  .hero__img-tablet {
+    display: none;
+  }
+}
+
+.hero__img-desktop {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 80rem) {
+  .hero__img-desktop {
+    display: block;
+  }
+}
+
 @media (min-width: 48rem) {
   .hero__info {
     padding: 2.625rem 0;
+  }
+}
+
+@media (min-width: 80rem) {
+  .hero__info {
+    padding: 6.9375rem 0;
   }
 }
 
@@ -286,6 +335,12 @@ a {
   line-height: 1.2;
   font-weight: 800;
   color: var(--clr-blue-900);
+}
+
+@media (min-width: 80rem) {
+  .hero__title {
+    font-size: 3.5rem;
+  }
 }
 
 .hero__description {
@@ -359,6 +414,12 @@ a {
   font-size: 1.5rem;
   line-height: 1.2;
   font-weight: 800;
+}
+
+@media (min-width: 80rem) {
+  .course-intro__title {
+    font-size: 2rem;
+  }
 }
 
 .course {
