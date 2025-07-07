@@ -433,6 +433,14 @@ a {
   position: relative;
 }
 
+@media (min-width: 48rem) {
+  .course__info {
+    display: flex;
+    flex-direction: column;
+    height: 13.625rem;
+  }
+}
+
 .course__img-container {
   position: absolute;
   top: -1.75rem;
@@ -477,7 +485,7 @@ a {
 
 @media (min-width: 48rem) {
   .course__link {
-    margin-top: 2.125rem;
+    margin-top: auto;
   }
 }
 
