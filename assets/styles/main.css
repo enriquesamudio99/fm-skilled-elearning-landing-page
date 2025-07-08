@@ -150,16 +150,14 @@ a {
 
 .button--orange {
   background: var(--gradient-preset-one);
-  transition: opacity .2s ease-in-out;
 }
 
 .button--orange:hover {
-  opacity: .5;
+  background: linear-gradient(to right, rgba(255,255,255,.5) 0%, rgba(255,255,255,.5) 100%), var(--gradient-preset-one);
 }
 
 .button--purple {
   background: var(--gradient-preset-two);
-  transition: opacity .2s ease-in-out;
   padding: .625rem 1.5rem;
   font-size: 1.125rem;
   line-height: 1.5;
@@ -174,7 +172,7 @@ a {
 }
 
 .button--purple:hover {
-  opacity: .8;
+  background: linear-gradient(to right, rgba(255,255,255,.5) 0%, rgba(255,255,255,.5) 100%), var(--gradient-preset-two);
 }
 
 .container {
